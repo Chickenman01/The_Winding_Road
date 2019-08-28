@@ -7,4 +7,6 @@ print(len(myName))
 print('What is your age?')     # Ask for user age
 myAge = input()
 print(' You will be ' + str(int(myAge) + 1) + ' in a year.')
+myTime = date.today()
+print('By the way, The year is ' + )
 exit()

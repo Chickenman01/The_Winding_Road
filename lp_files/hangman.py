@@ -88,37 +88,40 @@ words={'Colors':'red blue green purple yellow white gray black brown teal pink'.
 #    return wordlist[wordIndex]
 
 def getRandomWord(wordDict):
-    #this function returns a random string from the passed dictionary of lists of strings, and the key also
-    #first, randomly select a key from the dictionary
-    wordKey=random.choice(list(wordDict.keys()))
-    #second, randomly select a string from the key in the dictionary list
-    wordIndex=random.randint(0, len(wordDict[wordKey]) - 1)
+#This function returns a random string from the passed dictionary of lists of strings, and the key also
+#First, randomly select a key from the dictionary
+    wordKey = random.choice(list(wordDict.keys()))
+#Second, randomly select a string from the key in the dictionary list
+    wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
 
     return[wordDict[wordKey][wordIndex], wordKey]
 
 def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
+#Prints the board based off any missed letters
     print(HANGMANPICS[len(missedLetters)])
     print()
 
+#This gives a section to display any letters that were guessed but not correct
     print('Missed Letters:', end=' ')
     for letter in missedLetters:
         print(letter, end=' ')
     print()
 
+#Makes blank lines for each letter in the secret word
     blanks = '_' * len(secretWord)
 
     for i in range(len(secretWord)):
-        #replace blanks with correctly guessed letters
+#Replace blanks created above with correctly guessed letters
         if secretWord[i] in correctLetters:
             blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
 
     for letter in blanks:
-        #show the secret word with spaces in between
+#Show the secret word with spaces in between
         print(letter, end= ' ')
     print()
 
 def getGuess(alreadyGuessed):
-    #returns the letter the player entered. This function makes sure the player enterned a single letter and not something else.
+#Returns the letter the player entered. This function makes sure the player enterned a single letter and not something else.
     while True:
         print('Guess a letter')
         guess = input()
@@ -133,7 +136,7 @@ def getGuess(alreadyGuessed):
             return guess
 
 def playAgain():
-    #This function returns True if the player wants to play again, otherwise it returns False.
+#This function returns True if the player wants to play again, otherwise it returns False.
     print('Do you want to play again? (yes or no)')
     return input().lower().startswith('y')
 
@@ -149,13 +152,13 @@ while True:
     print('The secret word is in the catagory: ' + secretKey)
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
 
-    #let the player guess the word
+#Let the player guess the word
     guess = getGuess(missedLetters + correctLetters)
 
     if guess in secretWord:
         correctLetters = correctLetters + guess
 
-        #check if the player has won
+#Check if the player has won
         foundAllLetters = True
         for i in range(len(secretWord)):
             if secretWord[i] not in correctLetters:
@@ -167,7 +170,7 @@ while True:
     else:
         missedLetters = missedLetters + guess
 
-        #check to see if the player guessed to many times and lost
+#Check to see if the player guessed to many times and lost
         if len(missedLetters) == len(HANGMANPICS) -1:
             displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
             print('You have run out of guesses! \nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses. The word was "' + secretWord + '"')

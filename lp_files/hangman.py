@@ -110,13 +110,13 @@ def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
 #Makes blank lines for each letter in the secret word
     blanks = '_' * len(secretWord)
 
-    for i in range(len(secretWord)):
 #Replace blanks created above with correctly guessed letters
+    for i in range(len(secretWord)):
         if secretWord[i] in correctLetters:
             blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
 
-    for letter in blanks:
 #Show the secret word with spaces in between
+    for letter in blanks:
         print(letter, end= ' ')
     print()
 

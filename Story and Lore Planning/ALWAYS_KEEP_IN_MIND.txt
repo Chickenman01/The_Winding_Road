@@ -1,0 +1,5 @@
+This is a very simple game. WE ARE NOT BUILDING THE NEXT MINECRAFT. -Rob
+
+We are teaching ourselves how to Python with this game. -Rob
+
+That being said I think this should be a full fledged complete game. -Rob

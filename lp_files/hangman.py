@@ -81,47 +81,47 @@ words={'Colors':'red blue green purple yellow white gray black brown teal pink'.
 'Fruits':'watermelon orange peach grape cantaloupe banana mango lime lemon apple pear strawberry'.split(),
 'Animals':'bat bear beaver cat cougar crab deer dog donkey duck eagle fish frog goat leech lion lizard monkey moose mouse otter owl panda python rabbit rat shark sheep skunk squid tiger turkey turtle weasel whale wolf wombat zebra'.split()}
 
-#old function definition for the old word list
-#def getRandomWord(wordlist):
-    #this function returns a random string from the list of passed strings
+# old function definition for the old word list
+# def getRandomWord(wordlist):
+    # this function returns a random string from the list of passed strings
 #    wordIndex = random.randint(0, len(wordlist) - 1)
 #    return wordlist[wordIndex]
 
 def getRandomWord(wordDict):
-#This function returns a random string from the passed dictionary of lists of strings, and the key also
-#First, randomly select a key from the dictionary
+# This function returns a random string from the passed dictionary of lists of strings, and the key also
+# First, randomly select a key from the dictionary
     wordKey = random.choice(list(wordDict.keys()))
-#Second, randomly select a string from the key in the dictionary list
+# Second, randomly select a string from the key in the dictionary list
     wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
 
     return[wordDict[wordKey][wordIndex], wordKey]
 
 def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
-#Prints the board based off any missed letters
+# Prints the board based off any missed letters
     print(HANGMANPICS[len(missedLetters)])
     print()
 
-#This gives a section to display any letters that were guessed but not correct
+# This gives a section to display any letters that were guessed but not correct
     print('Missed Letters:', end=' ')
     for letter in missedLetters:
         print(letter, end=' ')
     print()
 
-#Makes blank lines for each letter in the secret word
+# Makes blank lines for each letter in the secret word
     blanks = '_' * len(secretWord)
 
-#Replace blanks created above with correctly guessed letters
+# Replace blanks created above with correctly guessed letters
     for i in range(len(secretWord)):
         if secretWord[i] in correctLetters:
             blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
 
-#Show the secret word with spaces in between
+# Show the secret word with spaces in between
     for letter in blanks:
         print(letter, end= ' ')
     print()
 
 def getGuess(alreadyGuessed):
-#Returns the letter the player entered. This function makes sure the player enterned a single letter and not something else.
+# Returns the letter the player entered. This function makes sure the player enterned a single letter and not something else.
     while True:
         print('Guess a letter')
         guess = input()
@@ -136,7 +136,7 @@ def getGuess(alreadyGuessed):
             return guess
 
 def playAgain():
-#This function returns True if the player wants to play again, otherwise it returns False.
+# This function returns True if the player wants to play again, otherwise it returns False.
     print('Do you want to play again? (yes or no)')
     return input().lower().startswith('y')
 
@@ -152,13 +152,13 @@ while True:
     print('The secret word is in the catagory: ' + secretKey)
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
 
-#Let the player guess the word
+# Let the player guess the word
     guess = getGuess(missedLetters + correctLetters)
 
     if guess in secretWord:
         correctLetters = correctLetters + guess
 
-#Check if the player has won
+# Check if the player has won
         foundAllLetters = True
         for i in range(len(secretWord)):
             if secretWord[i] not in correctLetters:
@@ -170,7 +170,7 @@ while True:
     else:
         missedLetters = missedLetters + guess
 
-#Check to see if the player guessed to many times and lost
+# Check to see if the player guessed to many times and lost
         if len(missedLetters) == len(HANGMANPICS) -1:
             displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
             print('You have run out of guesses! \nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses. The word was "' + secretWord + '"')

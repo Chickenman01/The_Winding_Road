@@ -1,4 +1,5 @@
 import random
+import time
 
 HANGMANPICS = ['''
 
@@ -141,6 +142,13 @@ def playAgain():
     return input().lower().startswith('y')
 
 print('H A N G M A N')
+time.sleep(1)
+print('Dun')
+time.sleep(1)
+print('duun')
+time.sleep(1)
+print('DAAA')
+time.sleep(1)
 missedLetters = ''
 correctLetters = ''
 secretWord, secretKey = getRandomWord(words)

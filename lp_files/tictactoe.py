@@ -120,7 +120,7 @@ def getComputerMove(board, computerLetter):
     #Try and take one of the corners, if they are free
     move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
     if move != None:
-        return moves
+        return move
 
     #Try to take the center, if it is free
     if isSpaceFree(board, 5):

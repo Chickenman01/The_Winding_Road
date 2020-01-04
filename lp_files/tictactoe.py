@@ -82,7 +82,7 @@ def getPlayerMove(board):
 
 def chooseRandomMoveFromList(board, movesList):
     #Returns a valid move from the passed list on the passed board
-    #Returns None if there is no valid move
+    #Returns None if there is no valid move: Commented this out, it was causing a Type error
     possibleMoves = []
     for i in movesList:
         if isSpaceFree(board, i):
@@ -90,8 +90,8 @@ def chooseRandomMoveFromList(board, movesList):
 
         if len(possibleMoves) != 0:
             return random.choice(possibleMoves)
-        else:
-            return None
+        #else:
+            #return None
 
 def getComputerMove(board, computerLetter):
     #Given a board and the computer's letter, determine where to move and return that move

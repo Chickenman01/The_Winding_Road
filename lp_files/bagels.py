@@ -2,12 +2,12 @@
 
 import random
 
-def getSecretNum(numDigits):
+def getSecretNum():
     #Returns a string that is numDigits long, made up of unique random digits.
     numbers = list(range(10))
     random.shuffle(numbers)
     secretNum = ''
-    for i in range(numDigits):
+    for i in range(NUMDIGITS):
         secretNum += str(numbers[i])
     return secretNum
 

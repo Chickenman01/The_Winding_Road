@@ -43,7 +43,7 @@ def isOnlyDigits(num):
 def playAgain():
     #This function returns True if the player wants to play again. Otherwise it returns False.
     print('Do you want to play again? (yes or no)')
-    return input().lower().startswitch('y')
+    return input().lower().startswith('y')
 
 NUMDIGITS = 3
 MAXGUESS = 10
@@ -56,13 +56,13 @@ print(' Fermi           One digit is correct and in the right position.')
 print(' Bagels          No digit is correct.')
 
 while True:
-    secretNum = getSecretNum(NUMDIGITS)
+    secretNum = getSecretNum()
     print('I have thought up a number. You have %s guesses to get it.' %(MAXGUESS))
 
     numGuesses = 1
     while numGuesses <= MAXGUESS:
         guess = ''
-        while len(guess) != NUMDIGITS or isOnlyDigits(guess):
+        while len(guess) != NUMDIGITS or not isOnlyDigits(guess):
             print('Guess #%s: ' %(numGuesses))
             guess = input()
 

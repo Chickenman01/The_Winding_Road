@@ -56,7 +56,7 @@ print(' Fermi           One digit is correct and in the right position.')
 print(' Bagels          No digit is correct.')
 
 while True:
-    secretNum = getSecretNum(NUMDIGITS)
+    secretNum = getSecretNum()
     print('I have thought up a number. You have %s guesses to get it.' %(MAXGUESS))
 
     numGuesses = 1

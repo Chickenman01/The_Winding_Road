@@ -157,6 +157,7 @@ gameIsDone = False
 # LHP: I have no idea what "while True" is supposed to represent, or how I wrote this to loop properly based off of what I know...but the below code works.
 # LHP 1/2/2020: FOUND OUT WHY ITS WRITTEN "while True"...Its a while statement that always returns the boolean "True" and can only be broken with a "break" statement...I feel dumb
 # LHP: Stepping through this code would help to understand it.
+# RDM: 1/10/2019 Its funny because I was watching a tutorial on Python and it occurred to me what the answer was because he actually explained the "while True". It was a similar program
 while True:
     print('The secret word is in the catagory: ' + secretKey)
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)

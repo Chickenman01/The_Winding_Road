@@ -1,0 +1,86 @@
+Where the game takes place: 
+Galaxy: Exeon
+Time period: 1764 TC or Tech Continuum
+Starting Planet: Glazia
+Race: Glaziens
+
+Classes Available: Thief, Traveler, Mechanic, Evangelist
+
+Class Description:
+------------------------------------------------------------------
+Thief
+
+HP= Low
+
+AP= Medium
+
+CH= High
+
+EN= High
+
+Description:
+The thief is an agility based class whose main goal is winning the game with the least
+battles. Thieves tend to lose in a full scale encounter and will tend to prefer
+sneaking around and assassinating their foes.
+
+Motivation:
+The Thief is exploring the Uncharted Realm in search of treasures and other items of value to steal.
+The Thief completes the game when he unlocks the Sealed Door of Exios which is full of treasures untold.
+The Sealed Door of Exios is located within the abandoned alien capital ship (The last level all classes eventually end up)
+
+------------------------------------------------------------------
+Traveler
+
+HP= Medium
+
+AP= Low
+
+CH= Medium
+
+EN= High
+
+Description:
+
+
+Motivation:
+
+------------------------------------------------------------------
+Mechanic
+
+HP= Low
+
+AP= Medium
+
+CH= High
+
+EN= High
+
+Description:
+
+
+Motivation:
+
+
+------------------------------------------------------------------
+Evangelist
+
+HP= Low
+
+AP= Medium
+
+CH= High
+
+EN= High
+
+Description:
+
+
+Motivation:
+
+------------------------------------------------------------------
+
+# Basic stats should be:
+# Health or HP *Max health is 3*
+# Attack or AP *Max attack is 3*
+# Chance or CH *This is a percentage from 0% to 100%*
+# Energy or EN *This is both the measure for mana and energy*
